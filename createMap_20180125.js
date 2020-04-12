@@ -2,7 +2,7 @@
 require.config({
     paths: {
         //echarts: './js'
-        echarts: 'https://blog-static.cnblogs.com/files/leanfish/echarts.js'
+        echarts: 'http://echarts.baidu.com/echarts2/doc/example/www/js'
     }
 });
 
