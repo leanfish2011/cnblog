@@ -1,0 +1,93 @@
+<script>
+       $("#navList").append("<li><img src='https://images.cnblogs.com/cnblogs_com/leanfish/1316905/o_fishlog1.png' alt='logo' /></li>");
+       $("#navList").append("<li><a  class='menu' href='http://www.cnblogs.com/leanfish/'>首页</a></li>");
+       $("#navList").append("<li><a  class='menu' href='http://www.cnblogs.com/leanfish/p/3564076.html'>读书</a></li>");
+       $("#navList").append("<li><a  class='menu' href='http://www.cnblogs.com/leanfish/p/5723974.html'>下载</a></li>");
+       $("#navList").append("<li><a  class='menu' href='http://www.cnblogs.com/leanfish/p/5734471.html'>足迹</a></li>");
+       $("#navList").append("<li><a  class='menu' href='https://www.cnblogs.com/leanfish/category/677075.html'>人生</a></li>");
+       $("#navList").append("<li><a  class='menu' target='_blank' href='https://github.com/leanfish2011/'>Github</a></li>");
+       $("#navList").append("<li><a  class='menu' href='http://www.cnblogs.com/leanfish/p/9037707.html'>常用</a></li>");
+       $("#navList").append("<li><a  class='menu' href='http://www.cnblogs.com/leanfish/p/5724056.html'>关于我</a></li>");
+       $('<div id="homebanner"><div id="bannerText"><h1>瘦鱼-博客园</h1><h2>务实，进取</h2></div></div>').insertAfter($("#header"));
+
+      //滚动，菜单栏不变
+      // 定义菜单栏离页面顶部的距离，默认为100    
+	var divOffsetTop = 100;
+		//页面加载完之后，计算菜单栏到页面顶部的实际距离
+		var divMenu = document.getElementById("header");
+		divOffsetTop = divMenu.offsetTop;
+                gotoTop();//加载“返回顶部按钮”
+		$(window).scroll(function() {
+			//滚动固定菜单栏
+			// 计算页面滚动了多少（需要区分不同浏览器）    
+			var topVal = 0;
+			if (window.pageYOffset) {//这一条滤去了大部分， 只留了IE678    
+				topVal = window.pageYOffset;
+			} else if (document.documentElement.scrollTop) {//IE678 的非quirk模式    
+				topVal = document.documentElement.scrollTop;
+			} else if (document.body.scrolltop) {//IE678 的quirk模式    
+				topVal = document.body.scrolltop;
+			}
+			if (topVal <= divOffsetTop) {
+				divMenu.style.position = "";
+			} else {
+				divMenu.style.position = "fixed";
+                                divMenu.style.top = 0;//清除掉滚动时top
+			}
+		});
+
+function gotoTop(min_height) {
+	// 预定义返回顶部的html代码，它的css样式默认为不显示
+	var gotoTop_html = '<div id="gotoTop">返回<br>顶部</div>';
+	// 将返回顶部的html代码插入页面上id为page的元素的末尾
+	$("body").append(gotoTop_html);
+	$("#gotoTop").click(// 定义返回顶部点击向上滚动的动画
+	function() {
+		$('html,body').animate({
+			scrollTop : 0
+		}, 700);
+	}).hover(// 为返回顶部增加鼠标进入的反馈效果，用添加删除css类实现
+	function() {
+		$(this).addClass("hover");
+	}, function() {
+		$(this).removeClass("hover");
+	});
+	// 获取页面的最小高度，无传入值则默认为600像素
+	min_height ? min_height = min_height : min_height = 600;
+	// 为窗口的scroll事件绑定处理函数
+	$(window).scroll(function() {
+		// 获取窗口的滚动条的垂直位置
+		var s = $(window).scrollTop();
+		// 当窗口的滚动条的垂直位置大于页面的最小高度时，让返回顶部元素渐现，否则渐隐
+		if (s > min_height) {
+			$("#gotoTop").fadeIn(100);
+		} else {
+			$("#gotoTop").fadeOut(200);
+		};
+	});
+};
+
+var curIndex = 0;  //当前index
+var imgLen = 4;  //图片总数
+// 定时器
+var autoChange = setInterval(function(){ 
+         if(curIndex <  imgLen-1){ 
+             curIndex ++; 
+         }else{ 
+             curIndex = 0;
+         }
+        //调用变换处理函数
+         changeTo(curIndex);  
+    },5000);
+
+function changeTo(curIndex){
+ var imgurlCommon="https://images.cnblogs.com/cnblogs_com/leanfish/1316905/";
+ var imgurlIndex=new Array("o_homebanner.png","o_homebanner2.png","o_homebanner3.png","o_homebanner4.png");
+var imgurl=imgurlCommon+imgurlIndex[curIndex];
+//$("#homebanner").css("background-image","url(" + imgurl + ")");
+$("#homebanner").animate({opacity:0},1000,function() {
+       $("#homebanner").css({"background-image":"url(" + imgurl + ")",opacity:1});
+    });
+};
+
+</script>
