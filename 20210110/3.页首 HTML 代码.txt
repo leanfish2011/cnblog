@@ -1,0 +1,45 @@
+<!-- ............自定义首部代码开始............ -->
+<!-- 自定义进度条 -->
+<div id="myProgressBar" style="display: none;"></div>
+
+<!-- 自定义导航条 -->
+<div id="mynavbar" style="margin-top: 0px;">
+    <div style="position:relative;width:65pc;height:70px;margin:0 auto;">
+    	<a style="width: auto;margin-left: 25px;" class="c-c"  href="https://www.cnblogs.com/leanfish/">
+    		<img id="nv-icon" style="width: auto;height: 22px;outline: 0;margin-top: 25px;">
+    	</a>
+       <span style="font-size:18px;">瘦鱼-博客园</span>
+    	<div id="mynavbar_menu">
+	    	<a href="https://www.cnblogs.com/leanfish" class="c-c">首页</a>
+            <a href="https://www.cnblogs.com/leanfish/p/12913099.html" class="c-c">分类</a>
+            <a href="http://www.cnblogs.com/leanfish/p/3564076.html" class="c-c">读书</a>
+            <a href="https://github.com/leanfish2011/" class="c-c" target="_blank">Github</a>
+            <a href="http://106.53.116.69/" class="c-c" target="_blank">爱收藏</a>
+	        <a href="https://www.cnblogs.com/leanfish/p/9037707.html">友情链接</a>
+	    	<a href="https://msg.cnblogs.com/send/leanfish" class="c-c">联系</a>
+	    	<a href="https://www.cnblogs.com/" target="_blank">博客园</a>
+            <a href="https://i.cnblogs.com/posts">管理</a>
+	    	<a href="https://www.cnblogs.com/leanfish/p/5724056.html">关于</a>
+	    </div>
+    </div>
+</div>
+
+<!-- 自定义头部锚点 -->
+<a name="mtop"></a>
+
+<!-- 自定义头部 -->
+<div id="myheader">
+	<!-- 背景图片 -->
+    <div id="myheader_bg"></div>
+    <!-- 遮罩层 -->
+    <div id="myheader_cover" title="点我点我">
+        <!-- 博客标题 -->
+        <div id="mypost_title">
+            <div id="mypost_title_h" style="font-weight: 500;font-size: 21px;"></div>
+            <div id="mypost_title_f"></div>
+            <div id="mypost_title_e">
+                <a href="https://www.cnblogs.com/" class="c-c" style="">唯有热忱和勇敢，方能一往无前</a>
+            </div> 
+        </div>  
+    </div>
+</div>
